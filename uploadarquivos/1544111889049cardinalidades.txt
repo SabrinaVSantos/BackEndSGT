@@ -1,0 +1,8 @@
+Professor -->  (orienta)Pre-projeto  (1,1) (0,N)
+Professor -->  (coorienta)Pre-projeto (0,1) (0,N)
+Professor --> (coorienta) TCC (0,1) (0,N)
+TCC --> (Possui) Relatório (1,1) (0,n) 
+TCC --> (Possui) Pré- Projeto (0,1) (1,1) 
+TCC --> (POssui) Documento (1,1) (1,N) 
+
+His
