@@ -1,11 +1,18 @@
-language: java
-jdk:
-  - oraclejdk8
+language: node_js
+node_js:
+  - "10.5"
 
-install: 
-- mvn -N io.takari:maven:wrapper
-- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
- 
+branches:
+  only:
+    - master
 
-before_install:
-- chmod +x mvnw
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - ng build --prod
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
