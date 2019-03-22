@@ -7,9 +7,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import br.com.sabrina.sgt.service.FileStorageProperties;
 
 @SpringBootApplication(scanBasePackages = { "br.com" })
-@EnableConfigurationProperties({
-    FileStorageProperties.class
-})
 public class SgtApplication {
 
 	public static void main(String[] args) {
