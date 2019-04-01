@@ -2,13 +2,14 @@ package br.com.sabrina.sgt.dao;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import br.com.sabrina.sgt.entidade.PreProjeto;
 
-public interface PreProjetoRepository extends CrudRepository<PreProjeto, Long> {
+public interface PreProjetoRepository extends JpaRepository<PreProjeto, Long> {
 
 	@Query("SELECT a FROM PreProjeto a WHERE a.aluno1.id = :idAluno")
     PreProjeto findByIdAluno(@Param("idAluno") Long idAluno);

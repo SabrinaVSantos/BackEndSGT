@@ -2,13 +2,14 @@ package br.com.sabrina.sgt.dao;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import br.com.sabrina.sgt.entidade.RelatorioOrientacao;
 
-public interface RelatorioOrientacaoRepository extends CrudRepository<RelatorioOrientacao, Long> {
+public interface RelatorioOrientacaoRepository extends JpaRepository<RelatorioOrientacao, Long> {
 	
 	//recuperando relatorio de um tcc
 	@Query("SELECT a FROM RelatorioOrientacao a WHERE a.idTcc = :idTcc order by a.id")

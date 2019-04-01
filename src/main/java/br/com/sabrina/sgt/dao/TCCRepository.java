@@ -2,12 +2,13 @@ package br.com.sabrina.sgt.dao;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import br.com.sabrina.sgt.entidade.TCC;
 
-public interface TCCRepository extends CrudRepository<TCC, Long> {
+public interface TCCRepository extends JpaRepository<TCC, Long> {
 	List<TCC> findByOrderByTema();
 
 	List<TCC> findByTemaIgnoreCaseContainingOrderByTema(String tema);

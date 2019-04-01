@@ -36,7 +36,7 @@ public class DocumentosController {
 	private static final Logger logger = LoggerFactory.getLogger(DocumentosController.class);
 
     @Autowired
-    private FileStorageService fileStorageService;
+	protected FileStorageService fileStorageService;
     
 	@Autowired
 	protected DocumentosService documentosService;
@@ -46,16 +46,17 @@ public class DocumentosController {
 	
 	@Autowired
 	protected AlunoRepository alunoRepository;
-	
+
 	//listar todos os documentos de um aluno
 	@GetMapping("/{idAluno}")	
 	public List<Documento> listarPorIdAluno(@PathVariable Long idAluno) {
 		return documentosService.listarPorIdAluno(idAluno);
 	}
-	
+
+
 	//salvar e fazer upload de documentos de um aluno
     @PostMapping("/{idAluno}")
-    public boolean salvar(@PathVariable Long idAluno, 
+    public boolean Salvar(@PathVariable Long idAluno,
     		@RequestParam("preProjeto") MultipartFile preProjeto, 
     		@RequestParam("fichaInscricao") MultipartFile fichaInscricao, 
     		@RequestParam("cartaAceite") MultipartFile cartaAceite, 
